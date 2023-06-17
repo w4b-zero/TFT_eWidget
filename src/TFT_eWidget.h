@@ -23,7 +23,13 @@
 #if defined (ARDUINO_ARCH_ESP8266) || defined (ESP32)
   #include <pgmspace.h>
   #include <FS.h>
-  #include <LittleFS.h>
+///////////new: ********************
+#if defined (ESP8266)
+#include <LittleFS.h>
+#elif defined (ESP32)
+#include <LITTLEFS.h>
+#endif
+///////////End of new**************
 #endif
 
 #include <TFT_eSPI.h>
